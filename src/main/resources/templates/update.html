@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/form.css}" rel="stylesheet" />
+	<meta charset="UTF-8">
+	<title>Update Employee Details</title>
+</head>
+
+<h1 style="margin-left:38%;">UPDATE EMPLOYEE DETAILS</h1>
+<div class="container">
+	<form th:object="${employee}" th:action="@{/updateEmployee}" method="post">
+
+		<!-- <span th:text="${employee.id}"></span><br><br> -->
+		<input type="hidden" th:field="*{id}" readonly><br><br>
+
+		<label>Name: </label><br><br>
+		<input type="text" maxlength="20" th:field="*{name}">
+		<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error">enter name</span>
+		<br><br>
+
+
+		<label>Age: </label><br><br>
+		<input type="text" maxlength="2" th:field="*{age}">
+		<span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error"></span><br><br>
+
+
+		<label>Phone no: </label><br><br>
+		<input type="text" name="phoneNumber" maxlength="10" th:field="*{phoneNumber}">
+		<span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="error"></span><br><br>
+
+
+		<label>Department: </label><br><br>
+		<input type="text" name="department" maxlength="20" th:field="*{department}">
+		<span th:if="${#fields.hasErrors('department')}" th:errors="*{department}" class="error"></span><br><br>
+
+		<input type="submit" value="Update" class="submit">
+		<div></div><a href="/viewEmployee"><button class="button">Cancel</button></a>
+</div>
+</form>
+</body>
+
+</html>

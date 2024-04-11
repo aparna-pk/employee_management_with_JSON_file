@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: cadetblue;
+}
+
+table {
+	background-color: white;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border-radius: 5px;
+	width: 25%;
+	height: 30px;
+	border: none;
+	cursor: pointer;
+}
+
+div {
+	margin: 20px;
+	justify-content: space-between;
+
+}

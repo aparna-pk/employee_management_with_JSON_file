@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/form.css}" rel="stylesheet" />
+
+	<meta charset="UTF-8">
+	<title>add employee</title>
+</head>
+
+<body>
+	<h1 style="margin-left:39%;">ADD NEW EMPLOYEE</h1>
+	<div class="container">
+		<form th:object="${employee}" th:action="@{/add}" method="post">
+
+			<label>Name: </label><br><br>
+			<input type="text" maxlength="20" th:field="*{name}"  autofocus><br>
+			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error">enter name</span>
+			<br><br>
+
+
+			<label>Age: </label><br><br>
+			<input type="text"  th:field="*{age}" maxlength="2"><br>
+			<span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error"></span><br><br>
+
+
+			<label>Phone no: </label><br><br>
+			<input type="text" name="phoneNumber" maxlength="10" th:field="*{phoneNumber}"><br>
+			<span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="error"></span><br><br>
+
+
+			<label>Department: </label><br><br>
+			<input type="text" name="department" maxlength="20" th:field="*{department}"><br>
+			<span th:if="${#fields.hasErrors('department')}" th:errors="*{department}" class="error"></span><br><br>
+
+			<input type="submit" name="submit" class="submit">
+			<br><br>
+
+			<div>
+				<input type="reset" name="reset" class="button">
+			</div>
+		</form>
+		<div>
+			<a href="/"><button class="button">Home</button></a>
+		</div>
+	</div>
+</body>
+
+</html>

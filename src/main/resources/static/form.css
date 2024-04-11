@@ -1,0 +1,47 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: cadetblue;
+}
+
+h1 {
+	color: black;
+}
+
+.button {
+	border-radius: 25px;
+	width: 10%;
+	height: 25px;
+	border: none;
+	cursor: pointer;
+}
+
+.submit {
+	background-color: rgb(0, 64, 128);
+	color: white;
+	border-radius: 25px;
+	width: 40%;
+	height: 30px;
+	border: none;
+	cursor: pointer;
+}
+
+div {
+	margin: 30px;
+}
+
+input {
+	width: 40%;
+	height: 30px;
+	border: none;
+	outline: 0;
+}
+
+.container {
+
+	margin-left: 40%;
+}
+
+.error {
+	color: red;
+}

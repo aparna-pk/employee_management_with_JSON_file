@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: cadetblue;
+	text-align: center;
+}
+
+h1 {
+	color: black;
+}
+
+.container {
+
+	padding-top: 25px;
+
+
+}
+
+.link {
+	align-items: center;
+	margin: 20px;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border-radius: 25px;
+	width: 25%;
+	height: 50px;
+	border: none;
+}

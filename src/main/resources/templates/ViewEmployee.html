@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/viewtable.css}" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+	<script type="text/javascript" lang="javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+	<script type="text/javascript" lang="javascript"
+		src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+
+	<meta charset="UTF-8">
+	<title>Employee Details</title>
+</head>
+
+<body>
+	<h1>EMPLOYEE DETAILS</h1>
+	<table border="1" id="employeeTable">
+		<thead>
+			<tr>
+
+				<th>Employee Name</th>
+				<th>Age</th>
+				<th>Phone no</th>
+				<th>Department</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="employee:${allemplist}">
+
+				<td th:text="${employee.name}"></td>
+				<td th:text="${employee.age}"></td>
+				<td th:text="${employee.phoneNumber}"></td>
+				<td th:text="${employee.department}"></td>
+				<td> <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}">Update</a></td>
+				<td><a th:href="@{/deleteEmployee/{id}(id=${employee.id})}"
+						onclick="return confirm('Are you sure to delete?')">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<a href="/addEmployee"><button>Add New Employee</button></a>
+		<div>
+		</div>
+		<a href="/"><button>HOME</button></a>
+	</div>
+	
+	<script type="text/javascript" lang="javascript" src="/js/datatable.js"></script>
+	
+</body>
+
+</html>
